@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavabarComponent implements OnInit {
 
-  logo:string = "../assets/images/Spotify_logo.png"
+  logo:string = "../assets/images/Spotify_logo_text.svg";
 
   constructor() { }
 

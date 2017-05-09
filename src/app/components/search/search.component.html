@@ -1,23 +1,23 @@
 <div class="jumbotron">
-  <h3 class="display-3">Need Music?</h3>
-  <p>Use the ng Sopotify app to browse new release and find your favourite songs.</p>
+  <div class="container">
+    <h3 class="display-3">Need Music?</h3>
+    <p>Use the ng Sopotify app to browse new release and find your favourite songs.</p>
+    <form>
+      <fieldset>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search here the artists" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()">
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
 
 <div class="container">
-  <form>
-    <fieldset>
-      <div class="form-group">
-        <label>Serch Music</label>
-        <input type="text" class="form-control" placeholder="Search Artist" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()">
-      </div>
-    </fieldset>
-  </form>
-
   <div *ngIf="searchRes">
     <div *ngFor="let artist of searchRes">
       <div class="row">
         <div class="col-md-12">
-          <div class="search-res well">
+          <div class="search-res alert">
             <h4><a routerLink="/artist/{{artist.id}}">{{artist.name}}</a></h4>
             <div>
               <strong>Genres: </strong>
@@ -28,7 +28,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
